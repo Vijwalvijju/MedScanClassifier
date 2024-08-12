@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload X-ray</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload X-ray</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+            <label for="xray">Choose X-ray image:</label>
+            <input type="file" id="xray" name="xray" required>
+
+            <label for="type">Fracture Type:</label>
+            <select id="type" name="type">
+                <option value="arm">Arm</option>
+                <option value="leg">Leg</option>
+                <option value="spine">Spine</option>
+                <option value="chest">Chest</option>
+                <option value="skull">Skull</option>
+                <option value="pelvis">Pelvis</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

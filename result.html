@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Classification Result</h1>
+        <div class="result-container">
+            <h2>Result</h2>
+            <p>{{ result }}</p>
+        </div>
+        <a href="/" class="button">Go back to Home</a>
+    </div>
+</body>
+</html>
