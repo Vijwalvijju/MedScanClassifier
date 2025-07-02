@@ -10,3 +10,7 @@ repoze.lru==0.7
 Routes==2.5.1
 six==1.16.0
 Werkzeug==3.0.3
+streamlit
+joblib
+numpy
+scikit-learn
